@@ -1,25 +1,28 @@
 /* Estilo base para la tarjeta del inventario*/
 .productos-card {
-    background-color:  #FFFFFF;
-    border: 1px solid #D4AF37;
-    border-radius: 6px;
+    background-color:  #1A1C22;
+    border: 1px solid #4A4E5A;
+    border-radius: 4px;
     overflow: hidden;
     transition: all 0.3s ease;
     text-decoration: none;
-    color: inherit;
+    color: #E0E0E0;
     display: flex;
     flex-direction: column;
     margin: 15px;
     max-width: 300px;
     display: inline-block;
     vertical-align: top;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);    cursor: pointer;
 }
 
 /*Estilo para el botón de búsqueda*/
 .btn.btn-outline-success {
-    background-color: #b28585b5;
-    color: #000000;
+    background-color: #960000;
+    color: #FFFFFF;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 /*Alineacion de la barra de navegación*/
@@ -29,49 +32,70 @@
 
 /*Color de fondo de la pag web*/
 .cuerpo {
-    background-color: #FFFDD0;
+    background-color: #0D0D0D;
+    color: #E0E0E0;;
 }
 
 /*Estilo al pasar el mouse por encima del botón*/
 .btn.btn-outline-success:hover {
-    background-color: #ce6c6c;
-    color: #fcf6f6;
+    background-color: #C10000; /* Rojo más brillante al hover */
+    box-shadow: 0 0 10px #960000;
+    color: #FFFFFF;
 }
 
 /*Estilo del formulario de búsqueda*/
 .form-control {
-    background-color: #f4f2f2;
+    background-color: #252830; /* Gris oscuro para el input */
+    border: 1px solid #4A4E5A;
+    color: #FFFFFF;
 }
 
 /*Estilo del título de la tienda*/
 .titleTien {
     text-align: center;
-    color: #2D2D2D;
+    color: #F2F2F2; 
+    text-shadow: 2px 2px 4px rgba(150, 0, 0, 0.5); /* Sutil resplandor rojo */
     margin-top: 40px;
-    font-family:'Times New Roman', Times, serif
+    font-family: 'Impact', sans-serif; /* Tipografía más agresiva */
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 /* Efecto al pasar el mouse por encima */
 .productos-card:hover {
-    border-color: #0048f1;
-    box-shadow: 0 10px 15px rgb(1, 60, 252);
-    transform: translateY(-5px);
+    border-color: #004E7A;
+    box-shadow: 0 0 25px rgba(0, 78, 122, 0.8);
+    transform: translateY(-25px);
 }
 
 /* Contenedor de la imagen */
 .card-image-container {
-    width: 25%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
     overflow: hidden;
-    background-color: #080000;
+}
+
+/* Contenedor específico para la página de detalle */
+#prod-image-container {
+    height: 400px;
 }
 
 /* Imagen de la tarjeta */
 .card-img {
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* mostrar la imagen completa en detalle */
+    object-position: center;
+    display: block;
+    background-color: #000;
+}
+
+/* Miniaturas en las tarjetas deben usar cover para llenar el recuadro */
+.productos-card .card-img {
     width: 100%;
-    height: 100%;
+    height: 150px;
     object-fit: cover;
-    transition: transform 0.3s ease;
 }
 
 .productos-card:hover .card-img {
@@ -88,30 +112,28 @@
 
 /* Título de la tarjeta */
 .card-title {
-    color: #e67e22;
+    color: #F2F2F2;
     margin: 0 0 0.5rem 0;
     font-size: 1.2rem;
+    font-weight: bold;
 }
 
 /* Descripción de la tarjeta */
 .card-description {
-    color: #666;
+    color: #AAA; /* Gris claro para descripción */
     font-size: 0.9rem;
     margin: 0 0 1rem 0;
-    flex-grow: 1;
 }
 
 /* Estilos de estado */
 .status-ok {
-    color: #27ae60;
+    color: #00A3FF; /* Azul neón tipo "Orb Azul" */
     font-weight: bold;
-    font-size: 0.95rem;
 }
 
 .status-none {
-    color: #e74c3c;
+    color: #FF0000; /* Rojo sangre */
     font-weight: bold;
-    font-size: 0.95rem;
 }
 
 /* Contenedor del inventario */

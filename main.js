@@ -45,6 +45,27 @@ const buscarProducto = (nombreP) => {
     
 //Evento para cargar los productos al iniciar la pagina
 document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    if (id) {
+        //Carga el detalle del producto
+        fetch(`https://dummyjson.com/products/${id}`)
+            .then(res => res.json())
+            .then(prod => {
+                document.getElementById('prod-title').textContent = prod.title;
+                const imgEl = document.getElementById('prod-image');
+                imgEl.src = prod.images[0];
+                imgEl.alt = prod.title;
+                imgEl.style.objectFit = 'cover';
+                document.getElementById('prod-price').textContent = `Precio: $${prod.price}`;
+                document.getElementById('prod-category').textContent = `Categoría: ${prod.category}`;
+                document.getElementById('prod-rating').textContent = `Rating: ${prod.rating}`;
+                document.getElementById('prod-description').textContent = prod.description;
+            });
+        return;
+    }
+
     //llamada hacia la funcion cargarProductos
     cargarProductos();
 
